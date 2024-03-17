@@ -1,136 +1,156 @@
-body
-{
-   margin:0;
-   padding:0; 
-   cursor:url('images/aim2.jpg'),auto;
-   overflow:hidden;
+* {
+    cursor: none;
 }
 
-body:before
-{
-    content:'';
-    display:block;
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index: 1;
-    background:url(images/bg.jpg) center/cover no-repeat;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none;
+}
+
+body:before {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: +1;
+    background: url(images/bg.jpg) center/cover no-repeat;
+}
+
+.cursor-check {
+    height: 10rem;
+    width: 10rem;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    background-color: aqua;
+    cursor: url('images/aim.png');
 }
 
 
-@keyframes birdfly 
-{
-    0%
-    {
-        left:150%;
-        top:10%;
+@keyframes birdfly {
+    0% {
+        left: 150%;
+        top: 10%;
     }
-    25%
-    {
-        left:150%;
-        top:50%;
+
+    25% {
+        left: 150%;
+        top: 50%;
     }
-    50%
-    {
-        left:50%;
-        top:30%;
+
+    50% {
+        left: 50%;
+        top: 30%;
     }
-    75%
-    {
-        left:30%;
-        top:40%;
+
+    75% {
+        left: 30%;
+        top: 40%;
     }
-    100%
-    {
-        left:-50%;
-        top:10%;
+
+    100% {
+        left: -50%;
+        top: 10%;
     }
-   
-}
-input + label
-{
-    position:absolute;
-    left:-100px;
-    /*z-index:1;*/
-    width: 40px;
-    height: 50px;
-    display:block;
-    z-index:5;
-    transform: translate(-50%,-50%);
-    background:url(images/bird.jpg) no-repeat left center;
-    /*background-size: contain;*/
-    background-position: -138px 0;
+
 }
 
-input:checked +label
-{
-    opacity:0;
+input+label {
+    position: absolute;
+    left: -100%;
+    width: 50px;
+    height: 40px;
+    display: block;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    background: url(images/b.jpg);
+    background-size: 50px 40px;
+    transform: scaleX(-1);
+}
+
+input:checked+label {
+    opacity: 0;
     transition: 0.5s;
-    transform: rotate(120deg) ;
+    transform: rotate(120deg);
     transform-origin: 60%;
     z-index: -5;
-
 }
 
-.bird:nth-last-of-type(1)
-{
+.bird_input::before {
+    left: -100%;
+}
+
+.bird:nth-last-of-type(1) {
     animation: birdfly 10s linear 1s infinite;
-    cursor:url("images/aim2.jpg"),auto;
 }
 
-.bird:nth-last-of-type(2)
-{
+.bird:nth-last-of-type(2) {
     animation: birdfly 20s linear 2s infinite;
-    cursor:url('images/aim2.jpg'),auto;
 }
 
-.bird:nth-last-of-type(3)
-{
+.bird:nth-last-of-type(3) {
     animation: birdfly 50s linear 5s infinite;
-    cursor:url("images/aim2.jpg"),auto;
 }
 
-.bird:nth-last-of-type(4)
-{
+.bird:nth-last-of-type(4) {
     animation: birdfly 30s linear 4s infinite;
-    cursor:url("images/aim2.jpg"),auto;
 }
 
-.bird:nth-last-of-type(5)
-{
+.bird:nth-last-of-type(5) {
     animation: birdfly 40s linear 6s infinite;
-    cursor:url("images/aim2.jpg"),auto;
 }
-.score
-{
+
+.bird:nth-last-of-type(6) {
+    animation: birdfly 70s linear 8s infinite;
+}
+
+.score {
     position: absolute;
-    bottom:0;
-    height:50px;
+    bottom: 0;
+    height: 50px;
     line-height: 50px;
-    background-color:blanchedalmond;
-    width:100%;
-    z-index: 2;
+    background-color: blanchedalmond;
+    width: 100%;
+    z-index: 3;
+    color: black;
     text-align: center;
     font-size: 30px;
 }
-.score:after
-{
-    content: counter(score);
-    display:inline-block;
 
+.win-msg {
+    display: block;
+    background-color: rgb(204, 219, 219);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10rem;
+    z-index: +5;
 }
-.score:before
-{
-    content:'score : ';
-    display:inline-block;
-    margin-right: 10px;
-}
- input:checked
- {
-    counter-increment: score;
- }
 
- .hidden {
-     display: none;
-    z-index: 5;
+.hidden {
+    display: none;
+}
+
+
+
+/* gun  */
+.gun {
+    z-index: 6;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.gun-img {
+    height: 20px;
+    width: 20px;
 }

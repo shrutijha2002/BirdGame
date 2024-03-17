@@ -7,27 +7,37 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onclick="document.getElementById('sound1').play();" >
+<div class="whole-block">
+
+    <div class="gun">
+        <img src="images/aim2.jpg" alt="sss" class="gun-img"/>
+    </div>
 
     <audio id="sound1" src="audio/gunshot.mp3" preload="auto"></audio>
-    <input type="checkbox" id="bird1">
+    <input type="checkbox" id="bird1" class='bird_input'/>
     <label for="bird1" class="bird"></label>
 
-    <input type="checkbox" id="bird2">
+    <input type="checkbox" id="bird2" class='bird_input'>
     <label for="bird2" class="bird"></label>
 
-    <input type="checkbox" id="bird3">
+    <input type="checkbox" id="bird3" class='bird_input'>
     <label for="bird3" class="bird"></label>
 
-    <input type="checkbox" id="bird4">
+    <input type="checkbox" id="bird4" class='bird_input'>
     <label for="bird4" class="bird"></label>
 
-    <input type="checkbox" id="bird5">
+    <input type="checkbox" id="bird5" class='bird_input'>
     <label for="bird5" class="bird"></label>
 
-    <div class="score"></div>
+
+    <input type="checkbox" id="bird6" class='bird_input'>
+    <label for="bird6" class="bird"></label>
+
+    <div class="score" id="scoreValue">Score</div>
     
-    <div id="winMessage" class="hidden">You win!</div>
+    <div class="win-msg hidden">You win!</div>
     
+</div>
     <script src="script.js"></script>
 </body>
 </html>
