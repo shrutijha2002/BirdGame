@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird hunt</title>
+    <link rel="stylesheet" type="text/css" href="D:\duck game\style.css">
+</head>
+<body onclick="document.getElementById('sound1').play();" >
+
+    <audio id="sound1" src="audio/gunshot.mp3" preload="auto"></audio>
+    <input type="checkbox" id="bird1">
+    <label for="bird1" class="bird"></label>
+
+    <input type="checkbox" id="bird2">
+    <label for="bird2" class="bird"></label>
+
+    <input type="checkbox" id="bird3">
+    <label for="bird3" class="bird"></label>
+
+    <input type="checkbox" id="bird4">
+    <label for="bird4" class="bird"></label>
+
+    <input type="checkbox" id="bird5">
+    <label for="bird5" class="bird"></label>
+
+    <div class="score"></div>
+    
+    <div id="winMessage" class="hidden">You win!</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
